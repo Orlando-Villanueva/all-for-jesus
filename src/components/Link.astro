@@ -1,0 +1,10 @@
+---
+const { href } = Astro.props;
+---
+
+<a
+    href={href}
+    class="hover:text-sky-500 underline decoration-2 underline-offset-2 decoration-sky-500"
+>
+    <slot />
+</a>

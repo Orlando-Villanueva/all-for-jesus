@@ -1,138 +1,82 @@
+---
+import Link from "./Link.astro"
+---
 <div x-data>
     <nav class="my-3">
-        <h1 class="text-lg font-semibold">
-            Bookmarks
-        </h1>
+        <h1 class="text-lg font-semibold">Bookmarks</h1>
         <ul class="flex flex-col space-y-2 mt-2">
             <li>
-                <a
-                    href="#introduction"
-                    x-on:click.prevent="scrollTo('#introduction')"
-                    >Introduction</a>
+                <Link  href="#introduction">Introduction</Link>
             </li>
             <li>
-                <a
-                    href="#testimony"
-                    x-on:click.prevent="scrollTo('#testimony')"
-                    >Testimony of the Saints</a>
+                <Link href="#testimony">Testimony of the Saints</Link>
             </li>
             <li>
-                <a
-                    href="#crusaders"
-                    x-on:click.prevent="scrollTo('#crusaders')"
-                    >The Christ Crusaders</a>
+                <Link href="#crusaders">The Christ Crusaders</Link>
             </li>
             <li>
-                <a href="#islam" x-on:click.prevent="scrollTo('#islam')"
-                    >On Islam with Sam Shamoun</a>
+                <Link href="#islam">On Islam with Sam Shamoun</Link>
             </li>
             <li>
-                <a
-                    href="#hinduism"
-                    x-on:click.prevent="scrollTo('#hinduism')"
-                    >On Hinduism</a>
+                <Link href="#hinduism">On Hinduism</Link>
             </li>
             <li>
-                <a
-                    href="#hermeticism"
-                    x-on:click.prevent="scrollTo('#hermeticism')"
-                    >On Hermeticism/Hermes Trismegistus with Mike DeVries</a>
+                <Link href="#hermeticism">On Hermeticism/Hermes Trismegistus with Mike DeVries</Link>
             </li>
             <li>
-                <a
-                    href="#occult-paths"
-                    x-on:click.prevent="scrollTo('#occult-paths')"
-                    >On “Occult Paths” with Isaiah Saldivar and Dr. Gene Kim</a>
+                <Link href="#occult-paths">On “Occult Paths” with Isaiah Saldivar and Dr. Gene Kim</Link>
             </li>
             <li>
-                <a href="#thelema" x-on:click.prevent="scrollTo('#thelema')"
-                    >On Thelema with Fr. Chad Ripperger and Archbishop
-                    Daniel</a>
+                <Link href="#thelema">On Thelema with Fr. Chad Ripperger and Archbishop Daniel</Link>
             </li>
             <li>
-                <a
-                    href="#buddhism"
-                    x-on:click.prevent="scrollTo('#buddhism')"
-                    >On Buddhism</a>
+                <Link href="#buddhism">On Buddhism</Link>
             </li>
             <li>
-                <a href="#jainism" x-on:click.prevent="scrollTo('#jainism')"
-                    >On Jainism</a>
+                <Link href="#jainism">On Jainism</Link>
             </li>
             <li>
-                <a href="#wicca" x-on:click.prevent="scrollTo('#wicca')"
-                    >On Wicca/Witchcraft with Jamie Hanshaw</a>
+                <Link href="#wicca">On Wicca/Witchcraft with Jamie Hanshaw</Link>
             </li>
             <li>
-                <a
-                    href="#freemasonry"
-                    x-on:click.prevent="scrollTo('#freemasonry')"
-                    >On Freemasonry with Jon Zherka</a>
+                <Link href="#freemasonry">On Freemasonry with Jon Zherka</Link>
             </li>
             <li>
-                <a
-                    href="#mormonism"
-                    x-on:click.prevent="scrollTo('#mormonism')"
-                    >On Mormonism</a>
+                <Link href="#mormonism">On Mormonism</Link>
             </li>
             <li>
-                <a
-                    href="#theosophy"
-                    x-on:click.prevent="scrollTo('#theosophy')"
-                    >On Theosophy</a>
+                <Link href="#theosophy">On Theosophy</Link>
             </li>
             <li>
-                <a
-                    href="#adventism"
-                    x-on:click.prevent="scrollTo('#adventism')"
-                    >On Adventism with Jay Dyer</a>
+                <Link href="#adventism">On Adventism with Jay Dyer</Link>
             </li>
             <li>
-                <a href="#new-age" x-on:click.prevent="scrollTo('#new-age')"
-                    >On New Age Christianity</a>
+                <Link href="#new-age">On New Age Christianity</Link>
             </li>
             <li>
-                <a
-                    href="#kundalini"
-                    x-on:click.prevent="scrollTo('#kundalini')"
-                    >On Raising the Kundalini</a>
+                <Link href="#kundalini">On Raising the Kundalini</Link>
             </li>
             <li>
-                <a href="#talmud" x-on:click.prevent="scrollTo('#talmud')"
-                    >On them Jewish Talmud with Morgan Ariel</a>
+                <Link href="#talmud">On the Jewish Talmud with Morgan Ariel</Link>
             </li>
             <li>
-                <a href="#science" x-on:click.prevent="scrollTo('#science')"
-                    >On Ken Ham Science with Dr. Walter Vieth</a>
+                <Link href="#science">On Ken Ham Science with Dr. Walter Vieth</Link>
             </li>
             <li>
-                <a href="#warfare" x-on:click.prevent="scrollTo('#warfare')"
-                    >On Spiritual Warfare with MarktheMessenger</a>
+                <Link href="#warfare">On Spiritual Warfare with MarktheMessenger</Link>
             </li>
             <li>
-                <a href="#dreams" x-on:click.prevent="scrollTo('#dreams')"
-                    >On Bad Dreams</a>
+                <Link href="#dreams">On Bad Dreams</Link>
             </li>
             <li>
-                <a
-                    href="#memorial"
-                    x-on:click.prevent="scrollTo('#memorial')"
-                    >Memorial Prayer</a>
+                <Link href="#memorial">Memorial Prayer</Link>
             </li>
         </ul>
     </nav>
 
     <script>
         function scrollTo(id) {
-            document
-                .getElementById(id)
-                .scrollIntoView({ behavior: "smooth" });
+            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
         }
     </script>
-
-    <style>
-        a {
-            @apply text-blue-600 hover:text-blue-800;
-        }
-    </style>
 </div>
