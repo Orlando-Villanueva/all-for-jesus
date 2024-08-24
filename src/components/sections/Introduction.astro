@@ -1,0 +1,55 @@
+---
+import Link from "../Link.astro";
+import { Image } from "astro:assets";
+import img1 from "../../assets/images/1.jpg";
+import img2 from "../../assets/images/2.jpg";
+import img3 from "../../assets/images/3.jpg";
+import img4 from "../../assets/images/4.jpg";
+import img5 from "../../assets/images/5.jpg";
+import img6 from "../../assets/images/6.jpg";
+import img7 from "../../assets/images/7.jpg";
+---
+
+<section class="py-4 leading-loose" id="introduction">
+    <h1 class="text-3xl mb-4 font-bold">Introduction</h1>
+    <p>I want to serve others. This is my expanded statement of purpose.</p>
+    <p class="my-2">
+        Special thanks to my brother in Christ
+        <Link href="https://x.com/DanielvsBabylon" newTab="true"
+            >Daniel vs Babylon
+            <Image
+                src={img1}
+                alt="Image"
+                loading="eager"
+                width="200"
+                height="200"
+                class="mt-2"
+            />
+        </Link>
+    </p>
+    <p class="whitespace-pre-line">
+        To all who are Abused and Broken,
+        This is my Crusade of Love.
+        My objective is to show there is no truth outside of Jesus Christ.
+        My sword is a letter to all who consider themselves Abused and Broken.
+        I know such pain can lead away from Jesus Christ. This is my reply.
+        I’m ready and fit for service to answer the call.
+        I addressed many different religions because I’m crazy in love enough to write such a response.
+    </p>
+
+    <Image
+        src={img2}
+        alt="Image"
+        loading="eager"
+        width="250"
+        height="250"
+        class="mt-2"
+    />
+    <p  class="whitespace-pre-line">
+        I’ll tell the reader my first name because through it I can tell you a miracle.
+        My first name is Zachary.
+        The first time I randomly decided to enter an Eastern Orthodox Church was February 6, 2022.
+        But this turned out to not just be any Sunday. 
+        This Sunday was the Sunday of the Apostle Zacchaeus of the Seventy.
+    </p>
+</section>

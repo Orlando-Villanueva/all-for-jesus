@@ -1,9 +1,11 @@
 ---
 const { href } = Astro.props;
+const { newTab } = Astro.props;
 ---
 
 <a
     href={href}
+    target={newTab ? "_blank" : "_self"}
     class="hover:text-sky-500 underline decoration-2 underline-offset-2 decoration-sky-500"
 >
     <slot />
