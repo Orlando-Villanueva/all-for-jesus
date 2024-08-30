@@ -1,78 +1,40 @@
 ---
 import Link from "./Link.astro"
 ---
-<div x-data>
-    <nav class="my-3">
-        <h1 class="text-lg font-semibold">Bookmarks</h1>
-        <ul class="flex flex-col space-y-2 mt-2">
-            <li>
-                <Link  href="#introduction">Introduction</Link>
-            </li>
-            <li>
-                <Link href="#saints">Testimony of the Saints</Link>
-            </li>
-            <li>
-                <Link href="#crusaders">The Christ Crusaders</Link>
-            </li>
-            <li>
-                <Link href="#islam">On Islam with Sam Shamoun</Link>
-            </li>
-            <li>
-                <Link href="#hinduism">On Hinduism</Link>
-            </li>
-            <li>
-                <Link href="#hermeticism">On Hermeticism/Hermes Trismegistus with Mike DeVries</Link>
-            </li>
-            <li>
-                <Link href="#occult-paths">On “Occult Paths” with Isaiah Saldivar and Dr. Gene Kim</Link>
-            </li>
-            <li>
-                <Link href="#thelema">On Thelema with Fr. Chad Ripperger and Archbishop Daniel</Link>
-            </li>
-            <li>
-                <Link href="#buddhism">On Buddhism</Link>
-            </li>
-            <li>
-                <Link href="#jainism">On Jainism</Link>
-            </li>
-            <li>
-                <Link href="#wicca">On Wicca/Witchcraft with Jamie Hanshaw</Link>
-            </li>
-            <li>
-                <Link href="#freemasonry">On Freemasonry with Jon Zherka</Link>
-            </li>
-            <li>
-                <Link href="#mormonism">On Mormonism</Link>
-            </li>
-            <li>
-                <Link href="#theosophy">On Theosophy</Link>
-            </li>
-            <li>
-                <Link href="#adventism">On Adventism with Jay Dyer</Link>
-            </li>
-            <li>
-                <Link href="#new-age">On New Age Christianity</Link>
-            </li>
-            <li>
-                <Link href="#kundalini">On Raising the Kundalini</Link>
-            </li>
-            <li>
-                <Link href="#talmud">On the Jewish Talmud with Morgan Ariel</Link>
-            </li>
-            <li>
-                <Link href="#science">On Ken Ham Science with Dr. Walter Vieth</Link>
-            </li>
-            <li>
-                <Link href="#warfare">On Spiritual Warfare with MarktheMessenger</Link>
-            </li>
-            <li>
-                <Link href="#dreams">On Bad Dreams</Link>
-            </li>
-            <li>
-                <Link href="#memorial">Memorial Prayer</Link>
-            </li>
+<div x-data class="bg-white dark:bg-neutral-800 p-4 rounded-md shadow-md">
+    <nav>
+        <h1 class="text-2xl font-bold mb-4">Bookmarks</h1>
+        <ul class="space-y-2">
+            <li><Link href="#introduction">Introduction</Link></li>
+            <li><Link href="#saints">Testimony of the Saints</Link></li>
+            <li><Link href="#crusaders">The Christ Crusaders</Link></li>
+            <li><Link href="#islam">On Islam with Sam Shamoun</Link></li>
+            <li><Link href="#hinduism">On Hinduism</Link></li>
+            <li><Link href="#hermeticism">On Hermeticism/Hermes Trismegistus with Mike DeVries</Link></li>
+            <li><Link href="#occult-paths">On "Occult Paths" with Isaiah Saldivar and Dr. Gene Kim</Link></li>
+            <li><Link href="#thelema">On Thelema with Fr. Chad Ripperger and Archbishop Daniel</Link></li>
+            <li><Link href="#buddhism">On Buddhism</Link></li>
+            <li><Link href="#jainism">On Jainism</Link></li>
+            <li><Link href="#wicca">On Wicca/Witchcraft with Jamie Hanshaw</Link></li>
+            <li><Link href="#freemasonry">On Freemasonry with Jon Zherka</Link></li>
+            <li><Link href="#mormonism">On Mormonism</Link></li>
+            <li><Link href="#theosophy">On Theosophy</Link></li>
+            <li><Link href="#adventism">On Adventism with Jay Dyer</Link></li>
+            <li><Link href="#new-age">On New Age Christianity</Link></li>
+            <li><Link href="#kundalini">On Raising the Kundalini</Link></li>
+            <li><Link href="#talmud">On the Jewish Talmud with Morgan Ariel</Link></li>
+            <li><Link href="#science">On Ken Ham Science with Dr. Walter Vieth</Link></li>
+            <li><Link href="#warfare">On Spiritual Warfare with MarktheMessenger</Link></li>
+            <li><Link href="#dreams">On Bad Dreams</Link></li>
+            <li><Link href="#memorial">Memorial Prayer</Link></li>
         </ul>
     </nav>
+
+    <style>
+        .menu-item {
+            @apply block py-2 px-4 text-gray-700;
+        }
+    </style>
 
     <script>
         function scrollTo(id) {
