@@ -5,7 +5,7 @@ import logo from "../assets/logo.png";
 
 <header
     x-data="{ openMenu: false }"
-    class="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 shadow-md px-4 py-3"
+    class="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 shadow-md px-4 py-3 text-gray-800 dark:text-white"
 >
     <!-- Mobile menu -->
     <nav class="lg:hidden flex justify-between items-center">
@@ -26,7 +26,7 @@ import logo from "../assets/logo.png";
         <div class="flex items-center justify-end flex-1">
             <button
                 @click="openMenu = !openMenu"
-                class="focus:outline-none lg:hidden text-gray-800 dark:text-white"
+                class="focus:outline-none lg:hidden"
             >
                 <svg
                     class="h-6 w-6"
@@ -104,12 +104,12 @@ import logo from "../assets/logo.png";
         <div class="flex-1 space-x-6 flex justify-end">
             <a
                 href="/prayers"
-                class="font-semibold text-gray-800 dark:text-white uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                class="font-semibold uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
                 >Akathist prayers</a
             >
             <a
                 href="/contact"
-                class="font-semibold text-gray-800 dark:text-white uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                class="font-semibold uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
                 >Contact</a
             >
         </div>
@@ -128,12 +128,12 @@ import logo from "../assets/logo.png";
         <div class="flex-1 space-x-6 flex justify-start">
             <a
                 href="/"
-                class="font-semibold text-gray-800 dark:text-white uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                class="font-semibold e uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
                 >All for Jesus</a
             >
             <a
                 href="/memorial"
-                class="font-semibold text-gray-800 dark:text-white uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                class="font-semibold uppercase hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
                 >Memorial</a
             >
         </div>
