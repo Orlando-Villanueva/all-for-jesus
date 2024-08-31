@@ -9,14 +9,25 @@ function toSuperscript(text) {
 <blockquote
     class="bg-white dark:bg-neutral-800 p-4 my-4 border-l-4 border-amber-300 rounded shadow-md dark:border-gray-500"
 >
-    <p class="text-center text-sm text-gray-600 dark:text-gray-300 mb-2">
-        {verses}
-    </p>
+    {
+        heading ? (
+            <p class="text-center text-sm text-gray-600 dark:text-gray-300 mb-2">
+                {verses}
+            </p>
+        ) : (
+            <h3 class="font-bold text-lg mb-2 text-center dark:text-zinc-200">
+                {verses}
+            </h3>
+        )
+    }
     <h3 class="font-bold text-lg mb-2 text-center dark:text-zinc-200">
         {heading}
     </h3>
     <p class="italic">
-        <span class="font-bold dark:text-zinc-200">{chapter}</span>
-        <span set:html={toSuperscript(text)} class="dark:text-gray-300" />
+        <p class="font-bold dark:text-zinc-200 inline">{chapter}</p>
+        <div
+            set:html={toSuperscript(text)}
+            class="dark:text-gray-300 space-y-2 inline"
+        />
     </p>
 </blockquote>
