@@ -1,0 +1,15 @@
+---
+const { header } = Astro.props;
+---
+
+<div>
+    <span class="block font-semibold text-lg mb-2">
+        {header}
+    </span>
+
+    <div
+        class="bg-amber-50 dark:bg-neutral-800 border-2 border-amber-200 dark:border-neutral-700 italic text-amber-900 dark:text-neutral-300 rounded p-2 shadow-md dark:shadow-lg flex flex-col space-y-4"
+    >
+        <slot />
+    </div>
+</div>
