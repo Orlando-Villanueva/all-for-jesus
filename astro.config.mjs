@@ -6,5 +6,4 @@ import alpinejs from "@astrojs/alpinejs";
 export default defineConfig({
   integrations: [tailwind(), alpinejs()],
   site: 'https://Orlando-Villanueva.github.io',
-  base: 'all-for-jesus-astro',
 });
