@@ -1,8 +1,66 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import fs from "fs";
+import path from "path";
+
+// Get all PDF files from public/docs/
+const docsDirectory = path.join(process.cwd(), "public", "docs");
+const pdfFiles = fs
+    .readdirSync(docsDirectory)
+    .filter((file) => file.endsWith(".pdf"));
+
+// Function to convert filename to readable sentence
+function fileNameToSentence(fileName: string): string {
+    return fileName
+        .replace(/\.pdf$/, "")
+        .split("_")
+        .map((word) => word.charAt(0) + word.slice(1))
+        .join(" ");
+}
 ---
 
-<Layout title="Prayers">
-    <h1>Prayers</h1>
-    <p>Prayers for all occasions.</p>
+<Layout title="Akathist Prayers">
+    <div class="max-w-3xl mx-auto py-8">
+        <h1 class="text-2xl font-semibold mb-6 text-center">
+            Download Akathist Prayers
+        </h1>
+        <ul class="space-y-2" x-data="{ hoveredItem: null }">
+            {
+                pdfFiles.map((file, index) => (
+                    <li
+                        class="transition-all duration-200 ease-in-out"
+                        x-on:mouseenter={`hoveredItem = ${index}`}
+                        x-on:mouseleave="hoveredItem = null"
+                    >
+                        <a
+                            href={`/docs/${file}`}
+                            download
+                            class="block p-3 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                            x-bind:class={`hoveredItem === ${index} ? 'bg-gray-100 dark:bg-gray-800' : ''`}
+                        >
+                            <div class="flex items-center">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="flex-shrink-0 h-5 w-5 mr-3 text-gray-500"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                                    />
+                                </svg>
+                                <span class="break-all text-sm">
+                                    {fileNameToSentence(file)}
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
 </Layout>
