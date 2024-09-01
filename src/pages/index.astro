@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Bookmarks from "../components/Bookmarks.astro";
+import Verse from "../components/Verse.astro";
 import Introduction from "../components/sections/Introduction.astro";
 import Testimony from "../components/sections/Saints.astro";
 import Crusaders from "../components/sections/Crusaders.astro";
@@ -26,14 +27,10 @@ import Memorial from "../components/sections/Memorial.astro";
 ---
 
 <Layout title="Crusade of Love">
-	<p class="text-center my-8">
-		<em
-			>Now grow up through the grace and knowledge of our Lord and Savior,
-			Jesus Christ.</em
-		>
-		<br />
-		<span class="font-semibold text-red-700 dark:text-red-400">2 Peter 3:18</span>
-	</p>
+	<Verse
+		verse="Now grow up through the grace and knowledge of our Lord and Savior, Jesus Christ."
+		reference="2 Peter 3:18"
+	/>
 	<Bookmarks />
 	<Introduction />
 	<Testimony />
