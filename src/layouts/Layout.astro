@@ -1,6 +1,7 @@
 ---
 const { title } = Astro.props;
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -29,13 +30,8 @@ import Header from "../components/Header.astro";
         <Header />
         <main class="container mx-auto px-2 py-4 lg:px-24 xl:px-44">
             <slot />
-            <footer>
-                <div>
-                    <p>© 2024 Crusade of Love</p>
-                </div>
-            </footer>
         </main>
-
+        <Footer />
         <button
             @click="window.scrollTo({top: 0, behavior: 'smooth'})"
             x-show="showTopButton"
@@ -45,7 +41,7 @@ import Header from "../components/Header.astro";
             x-transition:leave="transition ease-in duration-300"
             x-transition:leave-start="opacity-100 transform translate-y-0"
             x-transition:leave-end="opacity-0 transform translate-y-2"
-            class="fixed bottom-4 right-4 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 dark:text-white p-2 rounded-full shadow-lg hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800 dark:hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            class="fixed bottom-8 right-8 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 dark:text-white p-3 rounded-full shadow-lg hover:from-blue-200 hover:to-purple-200 dark:hover:from-blue-800 dark:hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
         >
             ↑
         </button>

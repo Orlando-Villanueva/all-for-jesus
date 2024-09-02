@@ -1,0 +1,37 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+    class="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 shadow-md px-4 py-6 mt-8"
+>
+    <div
+        class="container mx-auto flex flex-col md:flex-row justify-between items-center dark:text-white px-2 py-4 lg:px-24 xl:px-44"
+    >
+        <p class="text-sm mb-4 md:mb-0">
+            &copy; {currentYear} Crusade of Love
+        </p>
+        <nav class="flex space-x-4">
+            <a
+                href="/all-for-jesus-astro/"
+                class="text-sm hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                >Home</a
+            >
+            <a
+                href="/all-for-jesus-astro/prayers"
+                class="text-sm hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                >Prayers</a
+            >
+            <a
+                href="/all-for-jesus-astro/memorial"
+                class="text-sm hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                >Memorial</a
+            >
+            <a
+                href="/all-for-jesus-astro/contact"
+                class="text-sm hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-300"
+                >Contact</a
+            >
+        </nav>
+    </div>
+</footer>
