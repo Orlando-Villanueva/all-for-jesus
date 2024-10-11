@@ -1,7 +1,14 @@
 ---
+interface Props {
+  verses: string;
+  heading?: string;
+  chapter?: string;
+  text: string;
+}
+
 const { verses, heading, chapter, text } = Astro.props;
 
-function toSuperscript(text) {
+function toSuperscript(text: string): string {
     return text.replace(/(\d+)/g, "<sup>$1</sup>").replace(/\[.\]/g, "");
 }
 ---
@@ -11,23 +18,22 @@ function toSuperscript(text) {
 >
     {
         heading ? (
-            <p class="text-center text-sm text-gray-600 dark:text-gray-300 mb-2">
-                {verses}
-            </p>
+                <p class="text-center text-sm text-gray-600 dark:text-gray-300 mb-2">
+                    {verses}
+                </p>
+                <h3 class="font-bold text-lg mb-2 text-center dark:text-zinc-200">
+                    {heading}
+                </h3>
         ) : (
             <h3 class="font-bold text-lg mb-2 text-center dark:text-zinc-200">
                 {verses}
             </h3>
         )
     }
-    <h3 class="font-bold text-lg mb-2 text-center dark:text-zinc-200">
-        {heading}
-    </h3>
-    <p class="italic">
-        <p class="font-bold dark:text-zinc-200 inline">{chapter}</p>
-        <div
-            set:html={toSuperscript(text)}
-            class="dark:text-gray-300 space-y-2 inline"
-        />
-    </p>
+    <div class="italic dark:text-gray-300 space-y-2">
+        {chapter && (
+            <span class="font-bold dark:text-zinc-200 mr-1">{chapter}</span>
+        )}
+        <span set:html={toSuperscript(text)} />
+    </div>
 </blockquote>
