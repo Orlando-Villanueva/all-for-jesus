@@ -1,5 +1,6 @@
 ---
 import Link from "../Link.astro";
+import Video from "../Video.astro";
 import { Image } from "astro:assets";
 import img1 from "../../assets/images/1.jpg";
 import img2 from "../../assets/images/2.jpg";
@@ -95,17 +96,7 @@ import img14 from "../../assets/images/14.jpg";
 
         <p>"Oh Revelation, I can feel it coming like a dark train running."</p>
 
-        <iframe
-            src="https://www.youtube.com/embed/Yk6YPFCUaqA?si=5BEI-SA57ylsK_wo"
-            title="YouTube video player"
-            class="w-full lg:w-2/3 aspect-video"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            loading="lazy"
-        >
-        </iframe>
+        <Video src="https://www.youtube.com/embed/Yk6YPFCUaqA?si=5BEI-SA57ylsK_wo" />
 
         <p>
             I wrote this letter so I could testify for Christ even while I
