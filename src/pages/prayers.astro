@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from 'astro:assets';
 import fs from "fs";
 import path from "path";
 
@@ -8,6 +9,9 @@ const docsDirectory = path.join(process.cwd(), "public", "docs");
 const pdfFiles = fs
     .readdirSync(docsDirectory)
     .filter((file) => file.endsWith(".pdf"));
+
+// Get all cover images from assets/images/covers/
+const coverImages = import.meta.glob('/src/assets/images/covers/*.{png,jpg,jpeg}', { eager: true });
 
 // Function to convert filename to readable sentence
 function fileNameToSentence(fileName: string): string {
@@ -20,47 +24,44 @@ function fileNameToSentence(fileName: string): string {
 ---
 
 <Layout title="Akathist Prayers">
-    <div class="max-w-3xl mx-auto py-8">
+    <div class="max-w-6xl mx-auto py-8 px-4">
         <h1 class="text-2xl font-semibold mb-6 text-center">
             Download Akathist Prayers
         </h1>
-        <ul class="space-y-2" x-data="{ hoveredItem: null }">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-start" x-data="{ hoveredItem: null }">
             {
-                pdfFiles.map((file, index) => (
-                    <li
-                        class="transition-all duration-200 ease-in-out"
-                        x-on:mouseenter={`hoveredItem = ${index}`}
-                        x-on:mouseleave="hoveredItem = null"
-                    >
-                        <a
-                            href={`all-for-jesus/docs/${file}`}
-                            download={file}
-                            class="block p-3 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                            x-bind:class={`hoveredItem === ${index} ? 'bg-gray-100 dark:bg-gray-800' : ''`}
+                pdfFiles.map((file, index) => {
+                    const coverImage = Object.values(coverImages).find(img => img.default.src.includes(file.replace('.pdf', '')));
+                    return (
+                        <div
+                            class="transition-all duration-200 ease-in-out"
+                            x-on:mouseenter={`hoveredItem = ${index}`}
+                            x-on:mouseleave="hoveredItem = null"
                         >
-                            <div class="flex items-center">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="flex-shrink-0 h-5 w-5 mr-3 text-gray-500"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                            <a
+                                href={`/all-for-jesus/docs/${file}`}
+                                download
+                                class="block p-4 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 h-full flex flex-col items-center justify-center text-center"
+                                x-bind:class={`hoveredItem === ${index} ? 'bg-gray-100 dark:bg-gray-800' : ''`}
+                            >
+                                {coverImage && (
+                                    <Image
+                                        src={coverImage.default}
+                                        alt={fileNameToSentence(file)}
+                                        width={300}
+                                        height={400}
+                                        loading="lazy"
+                                        class="w-full mb-3 object-cover rounded-md shadow-md"
                                     />
-                                </svg>
-                                <span class="break-all text-sm">
+                                )}
+                                <span class="text-sm">
                                     {fileNameToSentence(file)}
                                 </span>
-                            </div>
-                        </a>
-                    </li>
-                ))
+                            </a>
+                        </div>
+                    )
+                })
             }
-        </ul>
+        </div>
     </div>
 </Layout>
