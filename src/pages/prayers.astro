@@ -33,7 +33,7 @@ function fileNameToSentence(fileName: string): string {
                         x-on:mouseleave="hoveredItem = null"
                     >
                         <a
-                            href={`all-for-jesus/docs/${file}`}
+                            href={`/docs/${file}`}
                             download={file}
                             class="block p-3 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                             x-bind:class={`hoveredItem === ${index} ? 'bg-gray-100 dark:bg-gray-800' : ''`}
